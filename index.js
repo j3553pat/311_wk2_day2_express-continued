@@ -11,13 +11,32 @@ app.listen(port, () => {
     console.log(`Web server is listening on port ${port}!`);
 });
 
-app.use(express.static('public'))
-app.use(bodyParser.json())
 
-app.get('/contacts', (req, res) => {
-    return res.json(contacts)
+app.use(express.static('public'));
+
+app.get("/contacts", (req, res) => {
+    res.json(contacts)
 })
 
-app.get('/vehicles', (req, res) => {
-    return res.json(vehicles)
+app.get("/vehicles", (req, res) => {
+    res.json(vehicles)
+})
+app.get("/comments", (req, res) => {
+    res.json(comments)
+})
+app.get("/products", (req, res) => {
+    res.json(products)
+})
+
+app.get("/contacts/:id", (req, res) => {
+    res.json(contacts)
+})
+app.get("/vehicles/:id", (req, res) => {
+    res.json(contacts)
+})
+app.get("/comments/:id", (req, res) => {
+    res.json(contacts)
+})
+app.get("/products/:id", (req, res) => {
+    res.json(contacts)
 })
